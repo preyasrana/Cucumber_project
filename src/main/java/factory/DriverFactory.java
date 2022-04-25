@@ -32,8 +32,9 @@ public class DriverFactory {
 			
 		    ChromeOptions options = new ChromeOptions();
 			options.addArguments("--no-sandbox");
-			//options.addArguments("--headless");
+			options.addArguments("--headless");
 			options.addArguments("--disable-gpu");
+			options.addArguments("--disable-dev-shm-usage");
 			driver = new ChromeDriver(options);
 		   
 		} else if (browser.equals("firefox")) {
