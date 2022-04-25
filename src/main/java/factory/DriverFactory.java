@@ -32,7 +32,7 @@ public class DriverFactory {
 			
 		    ChromeOptions options = new ChromeOptions();
 			options.addArguments("--no-sandbox");
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			options.addArguments("--disable-gpu");
 			driver = new ChromeDriver(options);
 		   
