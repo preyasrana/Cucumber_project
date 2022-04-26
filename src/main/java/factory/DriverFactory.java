@@ -39,7 +39,7 @@ public class DriverFactory {
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--no-sandbox"); 
-			//options.addArguments("--headless");
+			options.addArguments("--headless");
 			// options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--disable-dev-shm-usage");// overcome limited resource
 			//options.addArguments("--remote-debugging-port=9222"); // # this
