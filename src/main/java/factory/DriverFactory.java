@@ -35,11 +35,13 @@ public class DriverFactory {
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
-			options.addArguments("--no-sandbox"); // options.addArguments("--headless");
+			options.addArguments("--no-sandbox"); 
+			options.addArguments("--headless");
 			// options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--disable-dev-shm-usage");// overcome limited resource
 			//options.addArguments("--remote-debugging-port=9222"); // # this
 			options.addArguments("--whitelisted-ips");
+			
 			
 			driver = new ChromeDriver(options);
 
