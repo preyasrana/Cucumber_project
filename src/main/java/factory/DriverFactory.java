@@ -26,19 +26,21 @@ public class DriverFactory {
 		System.out.println("browser value is: " + browser);
 
 		if (browser.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			// driver = new ChromeDriver();
-
+						
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");	
+			driver = new ChromeDriver(); 
 			
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("start-maximized"); // open Browser in maximized mode
-			options.addArguments("disable-infobars"); // disabling infobars
-			options.addArguments("--disable-extensions"); // disabling extensions
-			options.addArguments("--no-sandbox"); 
-			// options.addArguments("--headless");
-			//options.addArguments("--disable-gpu"); // applicable to windows os only
-			options.addArguments("--disable-dev-shm-usage");// overcome limited resource problems
-			driver = new ChromeDriver(options);
+			/*
+			 * WebDriverManager.chromedriver().setup(); // driver = new ChromeDriver();
+			 * ChromeOptions options = new ChromeOptions();
+			 * options.addArguments("start-maximized"); // open Browser in maximized mode
+			 * options.addArguments("disable-infobars"); // disabling infobars
+			 * options.addArguments("--disable-extensions"); // disabling extensions
+			 * options.addArguments("--no-sandbox"); // options.addArguments("--headless");
+			 * //options.addArguments("--disable-gpu"); // applicable to windows os only
+			 * options.addArguments("--disable-dev-shm-usage");// overcome limited resource
+			 * problems driver = new ChromeDriver(options);
+			 */
 
 		} else if (browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -50,7 +52,7 @@ public class DriverFactory {
 		}
 
 		// getDriver().manage().deleteAllCookies();
-		//getDriver().manage().window().maximize();
+		getDriver().manage().window().maximize();
 
 		return getDriver();
 
