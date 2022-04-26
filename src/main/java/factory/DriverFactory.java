@@ -28,7 +28,7 @@ public class DriverFactory {
 		if (browser.equals("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");
-			System.setProperty("webdriver.chrome.verboseLogging", "true");
+			//System.setProperty("webdriver.chrome.verboseLogging", "true");
 			// WebDriverManager.chromedriver().setup(); // driver = new ChromeDriver();
 
 			ChromeOptions options = new ChromeOptions();
