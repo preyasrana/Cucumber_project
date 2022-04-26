@@ -26,8 +26,11 @@ public class DriverFactory {
 		System.out.println("browser value is: " + browser);
 
 		if (browser.equals("chrome")) {
+			
+			WebDriverManager.chromedriver().browserVersion("100.0.4896.127").setup();
+			WebDriverManager.chromedriver().driverVersion("100.0.4896.127").setup();
 
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");
+			//System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");
 			//System.setProperty("webdriver.chrome.verboseLogging", "true");
 			// WebDriverManager.chromedriver().setup(); // driver = new ChromeDriver();
 
@@ -36,7 +39,7 @@ public class DriverFactory {
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--no-sandbox"); 
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			// options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--disable-dev-shm-usage");// overcome limited resource
 			//options.addArguments("--remote-debugging-port=9222"); // # this
