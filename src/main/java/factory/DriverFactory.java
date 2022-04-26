@@ -29,18 +29,17 @@ public class DriverFactory {
 		System.out.println("browser value is: " + browser);
 
 		if (browser.equals("chrome")) {
-			
-			//WebDriverManager.chromedriver().browserVersion("100.0.4896.127").setup();
-			//WebDriverManager.chromedriver().driverVersion("100.0.4896.127").setup();
+
+			// WebDriverManager.chromedriver().browserVersion("100.0.4896.127").setup();
+			// WebDriverManager.chromedriver().driverVersion("100.0.4896.127").setup();
 
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");
-			//System.setProperty("webdriver.chrome.verboseLogging", "true");
-			 //WebDriverManager.chromedriver().setup(); 
-			  driver = new ChromeDriver();
+			// System.setProperty("webdriver.chrome.verboseLogging", "true");
+			// WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
 
-			
-			//DesiredCapabilities capabilities = new DesiredCapabilities();
-			
+			// DesiredCapabilities capabilities = new DesiredCapabilities();
+
 			/*
 			 * ChromeOptions options = new ChromeOptions();
 			 * options.addArguments("start-maximized"); // open Browser in maximized mode
@@ -52,10 +51,11 @@ public class DriverFactory {
 			 * options.addArguments("--remote-debugging-port=38500"); // # this
 			 * options.addArguments("--whitelisted-ips");
 			 */
-			
-			//driver = new RemoteWebDriver(capabilities);
-			//Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
-			//driver = new ChromeDriver(options);
+
+			// driver = new RemoteWebDriver(capabilities);
+			// Capabilities actualCapabilities = ((RemoteWebDriver)
+			// driver).getCapabilities();
+			// driver = new ChromeDriver(options);
 
 		} else if (browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
