@@ -1,9 +1,12 @@
 package factory;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -32,20 +35,26 @@ public class DriverFactory {
 
 			//System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");
 			//System.setProperty("webdriver.chrome.verboseLogging", "true");
-			// WebDriverManager.chromedriver().setup(); // driver = new ChromeDriver();
+			 //WebDriverManager.chromedriver().setup(); 
+			 // driver = new ChromeDriver();
 
+			
+			//DesiredCapabilities capabilities = new DesiredCapabilities();
+			
+			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--no-sandbox"); 
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			// options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--disable-dev-shm-usage");// overcome limited resource
 			//options.addArguments("--remote-debugging-port=9222"); // # this
 			options.addArguments("--whitelisted-ips");
 			
-			
+			//driver = new RemoteWebDriver(capabilities);
+			//Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
 			driver = new ChromeDriver(options);
 
 		} else if (browser.equals("firefox")) {
