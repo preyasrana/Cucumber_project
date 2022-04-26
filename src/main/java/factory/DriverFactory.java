@@ -1,7 +1,6 @@
 package factory;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,7 +12,7 @@ public class DriverFactory {
 
 	public static WebDriver driver;
 
-	//public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+	// public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
 	/**
 	 * This method is used to initialize the thradlocal driver on the basis of given
@@ -28,28 +27,31 @@ public class DriverFactory {
 
 		if (browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
+			// driver = new ChromeDriver();
+
 			
-		    ChromeOptions options = new ChromeOptions();
-			options.addArguments("--no-sandbox");
-			//options.addArguments("--headless");
-			options.addArguments("--disable-gpu");
-			options.addArguments("--disable-dev-shm-usage");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("start-maximized"); // open Browser in maximized mode
+			options.addArguments("disable-infobars"); // disabling infobars
+			options.addArguments("--disable-extensions"); // disabling extensions
+			options.addArguments("--no-sandbox"); 
+			// options.addArguments("--headless");
+			//options.addArguments("--disable-gpu"); // applicable to windows os only
+			options.addArguments("--disable-dev-shm-usage");// overcome limited resource problems
 			driver = new ChromeDriver(options);
-		   
+
 		} else if (browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (browser.equals("safari")) {
-			driver =  new SafariDriver();
+			driver = new SafariDriver();
 		} else {
 			System.out.println("Please pass the correct browser value: " + browser);
 		}
 
-		//getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().maximize();
-		
-		
+		// getDriver().manage().deleteAllCookies();
+		//getDriver().manage().window().maximize();
+
 		return getDriver();
 
 	}
@@ -62,10 +64,8 @@ public class DriverFactory {
 	public static synchronized WebDriver getDriver() {
 		return driver;
 	}
-	
+
 	/*
 	*/
-	
-	
-}
 
+}

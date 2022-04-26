@@ -1,12 +1,5 @@
 package Utility;
 
-/**
- * @author NaveenKhunteta
- * Created Date: Dec 25th, 2019
- * mail me at naveenanimation20@gmail.com in case of any PR or query
- * Licensed under NaveenAutomation Labs
- */
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Calendar;
