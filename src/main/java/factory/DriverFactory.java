@@ -50,7 +50,7 @@ public class DriverFactory {
 			//options.addArguments("--headless");
 			// options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--disable-dev-shm-usage");// overcome limited resource
-			//options.addArguments("--remote-debugging-port=9222"); // # this
+			options.addArguments("--remote-debugging-port=38500"); // # this
 			options.addArguments("--whitelisted-ips");
 			
 			//driver = new RemoteWebDriver(capabilities);
