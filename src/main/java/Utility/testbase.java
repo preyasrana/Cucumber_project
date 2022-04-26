@@ -239,51 +239,59 @@ public class testbase extends DriverFactory {
 				// System.out.println("request is :::" + request);
 				HttpResponse response = client.execute(request);
 
-				String data = imgele.getAttribute("src");
-				System.out.println("data is  >> " + data);
-				String extension;
+				
+				if (response.getStatusLine().getStatusCode() != 200) {
+					System.out.println("Image is invalid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
+							+ imgele.getAttribute("src"));
+				} else {
 
-				switch (data) {
-				case "data:image/svg+xml;base64":
-					extension = "svg";
-
-					String[] strings = data.split(",");
-					// convert base64 string to binary data
-					byte[] newdata = DatatypeConverter.parseBase64Binary(strings[1]);
-					String path = "C:\\Users\\Ene\\Desktop\\test_image." + extension;
-					File file = new File(path);
-					try (OutputStream outputStream = new BufferedOutputStream(new FileOutputStream(file))) {
-						outputStream.write(newdata);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-
-					if (response.getStatusLine().getStatusCode() != 200) {
-						System.out.println("Image is invalid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
-								+ imgele.getAttribute("src"));
-					} else {
-
-						System.out.println("Image is Valid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
-								+ imgele.getAttribute("src"));
-					}
-
-					break;
-
-				default:
-
-					if (response.getStatusLine().getStatusCode() != 200) {
-						System.out.println("Image is invalid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
-								+ imgele.getAttribute("src"));
-					} else {
-
-						System.out.println("Image is Valid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
-								+ imgele.getAttribute("src"));
-					}
-
-					break;
-
+					System.out.println("Image is Valid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
+							+ imgele.getAttribute("src"));
 				}
 
+
+				/*
+				 * String data = imgele.getAttribute("src"); System.out.println("data is  >> " +
+				 * data); String extension;
+				 * 
+				 * switch (data) { case "data:image/svg+xml;base64": extension = "svg";
+				 * 
+				 * String[] strings = data.split(","); // convert base64 string to binary data
+				 * byte[] newdata = DatatypeConverter.parseBase64Binary(strings[1]); String path
+				 * = "C:\\Users\\Ene\\Desktop\\test_image." + extension; File file = new
+				 * File(path); try (OutputStream outputStream = new BufferedOutputStream(new
+				 * FileOutputStream(file))) { outputStream.write(newdata); } catch (IOException
+				 * e) { e.printStackTrace(); }
+				 * 
+				 * if (response.getStatusLine().getStatusCode() != 200) {
+				 * System.out.println("Image is invalid   ::" +
+				 * response.getStatusLine().getStatusCode() + ":URL:" +
+				 * imgele.getAttribute("src")); } else {
+				 * 
+				 * System.out.println("Image is Valid   ::" +
+				 * response.getStatusLine().getStatusCode() + ":URL:" +
+				 * imgele.getAttribute("src")); }
+				 * 
+				 * break;
+				 * 
+				 * default:
+				 * 
+				 * if (response.getStatusLine().getStatusCode() != 200) {
+				 * System.out.println("Image is invalid   ::" +
+				 * response.getStatusLine().getStatusCode() + ":URL:" +
+				 * imgele.getAttribute("src")); } else {
+				 * 
+				 * System.out.println("Image is Valid   ::" +
+				 * response.getStatusLine().getStatusCode() + ":URL:" +
+				 * imgele.getAttribute("src")); }
+				 * 
+				 * break;
+				 * 
+				 * }
+				 */
+				
+				
+				
 				/*
 				 * String base64String =imgele.getAttribute("src"); String[] strings =
 				 * base64String.split(","); HttpResponse response = client.execute(request);
