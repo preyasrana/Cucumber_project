@@ -28,7 +28,7 @@ public class DriverFactory {
 		if (browser.equals("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/Download/chromedriver");
-
+			System.setProperty("webdriver.chrome.verboseLogging", "true");
 			// WebDriverManager.chromedriver().setup(); // driver = new ChromeDriver();
 
 			ChromeOptions options = new ChromeOptions();
@@ -40,6 +40,7 @@ public class DriverFactory {
 			options.addArguments("--disable-dev-shm-usage");// overcome limited resource
 			//options.addArguments("--remote-debugging-port=9222"); // # this
 			options.addArguments("--whitelisted-ips");
+			
 			driver = new ChromeDriver(options);
 
 		} else if (browser.equals("firefox")) {
