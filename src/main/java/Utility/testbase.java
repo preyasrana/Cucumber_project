@@ -73,18 +73,16 @@ public class testbase extends DriverFactory {
 		}
 		return value;
 	}
-	
+
 	public boolean isClickable(List<WebElement> element) {
 		boolean value = false;
 
 		System.out.println(driver);
-		
 
 		try {
 
-				((WebElement) element).click();
-			}
-		 catch (Exception e) {
+			((WebElement) element).click();
+		} catch (Exception e) {
 			e.getStackTrace();
 		}
 		return value;
@@ -211,7 +209,7 @@ public class testbase extends DriverFactory {
 			List<WebElement> webElements = element;
 			for (WebElement webElement : webElements) {
 				values.add(webElement.getText());
-			    
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -219,12 +217,6 @@ public class testbase extends DriverFactory {
 		System.out.println(values);
 		return values;
 	}
-	
-	
-	
-	
-	
-	
 
 	// List validateImage
 	public List<WebElement> Validate_image(List<WebElement> element) {
@@ -239,7 +231,6 @@ public class testbase extends DriverFactory {
 				// System.out.println("request is :::" + request);
 				HttpResponse response = client.execute(request);
 
-				
 				if (response.getStatusLine().getStatusCode() != 200) {
 					System.out.println("Image is invalid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
 							+ imgele.getAttribute("src"));
@@ -248,7 +239,6 @@ public class testbase extends DriverFactory {
 					System.out.println("Image is Valid   ::" + response.getStatusLine().getStatusCode() + ":URL:"
 							+ imgele.getAttribute("src"));
 				}
-
 
 				/*
 				 * String data = imgele.getAttribute("src"); System.out.println("data is  >> " +
@@ -289,9 +279,7 @@ public class testbase extends DriverFactory {
 				 * 
 				 * }
 				 */
-				
-				
-				
+
 				/*
 				 * String base64String =imgele.getAttribute("src"); String[] strings =
 				 * base64String.split(","); HttpResponse response = client.execute(request);
@@ -352,8 +340,6 @@ public class testbase extends DriverFactory {
 			e.printStackTrace();
 		}
 	}
-	
-	
 
 	// clearValue
 	public void clearValue(WebElement element) {
