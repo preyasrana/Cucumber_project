@@ -1,4 +1,3 @@
-Runners/Regression_TestRunner.class
 Runners/MyAccount_Runner.class
 StepDefinition/LoginSteps.class
 StepDefinition/RegisterSteps.class
@@ -6,4 +5,5 @@ StepDefinition/MyAccountsteps.class
 Pages/Login_page.class
 Pages/Register_page.class
 Pages/MyAccount_page.class
-Runners/TestNG_TestRunner.class
+Runners/Login_TestRunner.class
+Runners/Register_TestRunner.class
