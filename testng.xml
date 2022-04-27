@@ -3,8 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="StepDefinition.ApplicationHooks"/>   
-          
+       <class name="Runners.Login_TestRunner"/>
+       <class name="Runners.MyAccount_Runner"/>
+      
     </classes>
-  </test> 
-</suite> 
+    
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

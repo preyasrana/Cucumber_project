@@ -3,16 +3,21 @@ package StepDefinition;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Assert;
+//import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.touch.ScrollAction;
+//import org.testng.Assert;
+import org.testng.Assert;
+
 import Pages.MyAccount_page;
 import Utility.XLS_Reader;
 import Utility.testbase;
+
 import factory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 
 public class MyAccountsteps extends testbase {
 

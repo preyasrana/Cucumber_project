@@ -4,7 +4,7 @@
 @feature
 Feature: feature to login test functionality
 
-  @smoketest1
+  @smoketest
   Scenario: check login is successfully with valid credentails
     Given user is on Home Page
     When user click on Myaccount link
@@ -19,7 +19,7 @@ Feature: feature to login test functionality
     Then Verify broken images
     Then Verify broken urls 
     
-  @smoketest1
+  @smoketest
   Scenario: check login/register page on broken images & broken urls
     Given user is on Home Page
     When user click on Myaccount link
